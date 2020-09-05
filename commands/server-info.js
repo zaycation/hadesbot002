@@ -5,7 +5,7 @@ module.exports = {
         message.channel.send({embed: {
 			color: 15844367,
 			title: `${message.guild.name}`,
-			description: `\nRegion: ${message.guild.region}\nTotal members: ${message.guild.memberCount}\nNumber of Boosts: ${message.guild.premiumSubscriptionCount} | Boost Tier: ${message.guild.premiumTier}\nServer Owner: ${message.guild.owner} | ID: ${message.guild.ownerID}`,
+			description: `\n**Region:** ${message.guild.region}\n**Total members:** ${message.guild.memberCount}\n**Number of Boosts:** ${message.guild.premiumSubscriptionCount} **| Boost Tier:** ${message.guild.premiumTier}\n**Server Owner:** ${message.guild.owner} **| ID:** ${message.guild.ownerID}`,
           }});
     },
 };

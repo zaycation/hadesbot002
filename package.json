@@ -1,0 +1,16 @@
+{
+  "name": "hadesbot002",
+  "version": "1.0.0",
+  "description": "Hades [Ἁιδης] is a darknet and crypto bot. Add Hades to your server to get updates and never stay out of the loop!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zaycation.dev",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "eslint": "^7.6.0",
+    "fs": "0.0.1-security"
+  }
+}

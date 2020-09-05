@@ -5,7 +5,7 @@ module.exports = {
         message.channel.send({embed: {
             color: 15844367,
             title: `Discord Tag: ${message.author.tag}`,
-            description: `\nYour ID: ${message.author.id}\nCreated: ${message.author.createdAt}\n\nIs User A Bot? ${message.author.bot}\n\nLast Message: \n> ${message.author.lastMessage}\n\nUser's Avatar: ${message.author.displayAvatarURL({ dynamic: true })}`
+            description: `\n**Your ID:** ${message.author.id}\n**Created:** ${message.author.createdAt}\n\n**Is User A Bot?** ${message.author.bot}\n\n**Last Message:** \n> ${message.author.lastMessage}\n\n**User's Avatar:** ${message.author.displayAvatarURL({ dynamic: true })}`
           }});
     },
 };

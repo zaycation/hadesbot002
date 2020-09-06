@@ -3,22 +3,20 @@ module.exports = {
 	description: 'Tag a member and kick them (but not really).',
 	execute(message) {
 		
-		if (msg.content.startsWith("$kick ")) {
-			if (msg.mentions.members.first()) {
-				msg.mentions.members.first.kick().then((member) => {
-					msg.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-				}).catch(() => {
-					msg.channel.send("I do not have permissions to do this");
-				});
-			}
-		}else if (msg.content.startsWith("$ban ")) {
-			if (msg.mentions.members.first()) {
-				msg.mentions.members.first.ban().then((member) => {
-					msg.channel.send(":wave: " + member.displayName + " has been successfully banned :point_right: ");
-				}).catch(() => {
-					msg.channel.send("I do not have permissions to do this");
-				});
-			}
-		}
+		if(!message.member.hasPermission('KICK_MEMBERS'))
+        message.channel.send("You don't have permission to use that command.");
+    else {
+        let member = message.guild.members.cache.get(args);
+        if(member) {
+        try {
+            await member.kick();
+            console.log('Kicked');
+            message.channel.send(`${member}, Kicked!`)
+        }
+            catch(err) {
+            console.log(err);
+        }
+    }
+}
 	},
 };

@@ -10,9 +10,13 @@ module.exports = {
     let botCard1 = Math.floor(Math.random() * 11) + 2;
     let botCard2 = Math.floor(Math.random() * 11) + 2;
     let playerTotal = playerCard1 + playerCard2;
+    let botTotal = botCard1 + botCard2;
     let playerArray =[];
     let botArray = [];
-    let botTotal = botCard1 + botCard2;
+    playerArray.push(playerCard1);
+    playerArray.push(playerCard2);
+    botArray.push(botCard1);
+    botArray.push(botCard1);
     let embed = new Discord.MessageEmbed()
     .setTitle('Blackjack')
     .setDescription(`Your hand: ${playerCard1},${playerCard2}:${playerTotal}\nHades hand: ${botCard1},${botCard2}:${botTotal}\n`)

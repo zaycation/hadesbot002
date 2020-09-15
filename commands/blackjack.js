@@ -20,5 +20,6 @@ module.exports = {
     let embed = new Discord.MessageEmbed()
     .setTitle('Blackjack')
     .setDescription(`Your hand: ${playerCard1},${playerCard2}:${playerTotal}\nHades hand: ${botCard1},${botCard2}:${botTotal}\n`)
+    message.channel.send(embed);
   },
 };

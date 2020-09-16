@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
 
     } catch (error) {
         console.log(error);
-        return message.channel.send(`Oopsie, unknown error I guess: ${error}`);
+        return message.channel.send(`Whoops, unknown error I guess: ${error}`);
     }
 }
 

@@ -34,7 +34,7 @@ module.exports = {
       embed: {
         color: 15844367,
         title: "Action: Ban",
-        description: `Banned ${target} | ID: (${target.id})\nReason: ${reason}\n*Mod: ${message.author.username}*`,
+        description: `Banned ${target} | ID: (${target.id})\nReason: ${module.exports.reason}\n*Mod: ${message.author.username}*`,
       },
     });
 

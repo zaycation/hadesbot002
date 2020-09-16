@@ -1,8 +1,8 @@
 module.exports = {
-  name: "kick",
+  name: "ban",
   category: "moderation",
-  description: "Kick anyone with one shot xD",
-  usage: "kick <@user> <reason>",
+  description: "Ban anyone with one shot xD",
+  usage: "ban <@user> <reason>",
   execute(message, args) {
 
     let target = message.mentions.members.first();
@@ -25,7 +25,7 @@ module.exports = {
       embed: {
         color: 15844367,
         title: "Action: Kick",
-        description: `Kicked ${target} (${target.id})\nKicked by ${message.author.username}`,
+        description: `Kicked ${target} | ID: (${target.id})\nReason: ${reason}\nMod: ${message.author.username}`,
       },
     });
 

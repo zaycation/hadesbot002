@@ -4,8 +4,17 @@ module.exports = {
   description: "Ban anyone with one shot xD",
   usage: "ban <@user> <reason>",
   execute(message, args) {
+    if (!message.member.hasPermission("BAN_MEMBERS")) {
+      return message.channel.send(
+        `**${message.author.username}**, You do not have perms to ban someone`
+      );
+    } else if (!message.guild.me.hasPermission("BAN_MEMBERS")) {
+      return message.channel.send(
+        `**${message.author.username}**, I am do not have perms to ban someone`
+      );
+    }
 
-    let target = message.mentions.members.first();
+    const target = message.mentions.members.first();
 
     if (!target) {
       return message.channel.send(
@@ -25,7 +34,7 @@ module.exports = {
       embed: {
         color: 15844367,
         title: "Action: Ban",
-        description: `Banned ${target} | ID: (${target.id})\nReason: ${reason}\nMod: ${message.author.username}`,
+        description: `Banned ${target} | ID: (${target.id})\nReason: ${reason}\n*Mod: ${message.author.username}*`,
       },
     });
 

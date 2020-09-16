@@ -1,13 +1,21 @@
 module.exports = {
 	name: 'kick',
 	description: 'Tag a member and kick them (but not really).',
-	execute(message) {
-		if (!message.mentions.users.size) {
-			return message.reply('you need to tag a user in order to kick them!');
+	execute(message, args) {
+		if(!message.member.hasPermission('KICK_MEMBERS'))
+        message.channel.send("You don't have permission to use that command.");
+		else {
+			let member = message.guild.members.cache.get(args);
+			if(member) {
+			try {
+				await member.kick();
+				console.log('Kicked');
+				message.channel.send(`${member}, Kicked!`)
+			}
+				catch(err) {
+				console.log(err);
+        		}
+    		}
 		}
-
-		const taggedUser = message.mentions.users.first();
-
-		message.channel.send(`You wanted to kick: ${taggedUser.username}`);
 	},
 };

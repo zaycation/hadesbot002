@@ -2,7 +2,7 @@ module.exports = {
   name: "kick",
   category: "moderation",
   description: "Kick anyone instantly",
-  usage: "kick <@user> <reason>",
+  usage: "<@user> <reason>",
   execute(message, args) {
     if (!message.member.hasPermission("KICK_MEMBERS")) {
       return message.channel.send(

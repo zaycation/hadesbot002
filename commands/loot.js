@@ -2,7 +2,7 @@ module.exports = {
 	name: 'loot',
 	description: 'Loot randomly',execute(message) {
         
-        let lootingAmount = Math.round(Math.random() * (2000 - 300) + 300);
+        let lootingAmount = Math.floor(Math.random() * (2000 - 20) + 150);
 
         message.channel.send({embed: {
 			color: 15844367,

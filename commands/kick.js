@@ -36,7 +36,7 @@ module.exports = {
       embed: {
         color: 15844367,
         title: "Action: Kick",
-        description: `Kicked ${target} | ID: (${target.id})\nReason: ${reason}\n*Mod: ${message.author.username}*`,
+        description: `Kicked ${target} | ID: (${target.id})\nReason: ${args[1]}\n\n*Mod: ${message.author.username}*`,
       },
     });
 
